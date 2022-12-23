@@ -19,6 +19,7 @@ use App\Http\Controllers\PemasukkanAdminController2;
 use App\Http\Controllers\PemasukkanAdminController3;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\MenuController;
+Use Illuminate\Support\Facades\Artisan;
 
 /*
 |--------------------------------------------------------------------------
@@ -92,4 +93,16 @@ Route::resource('/adminPusatKaryawan', KaryawanAdminController::class);
 Route::resource('/adminPusatMenu', MenuAdminController::class);
 Route::resource('/adminMenu', MenuController::class);
 
+Route::get('/mig', function()
+{
+    // Call and Artisan command from within your application.
+    Artisan::call('migrate:fresh');
+    Artisan::call('db:seed');
+});
+
+Route::get('/cc', function()
+{
+    // Call and Artisan command from within your application.
+    Artisan::call('config:clear');
+});
 ?>
