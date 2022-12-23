@@ -93,6 +93,8 @@ Route::resource('/adminPusatKaryawan', KaryawanAdminController::class);
 Route::resource('/adminPusatMenu', MenuAdminController::class);
 Route::resource('/adminMenu', MenuController::class);
 
+//cloud
+
 Route::get('/mig', function()
 {
     // Call and Artisan command from within your application.
